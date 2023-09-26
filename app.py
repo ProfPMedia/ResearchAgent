@@ -16,7 +16,7 @@ from bs4 import BeautifulSoup
 import requests
 import json
 from langchain.schema import SystemMessage
-from fastapi import Depends, FastAPI
+from fastapi import Depends, FastAPI, Response
 from fastapi.security.api_key import APIKey
 import auth 
 #import streamlit as st
@@ -190,3 +190,7 @@ async def researchAgent(query: Query, api_key: APIKey = Depends(auth.get_api_key
     actual_content = content['output']
     return actual_content
 
+@app.get("/health")
+def health(response: Response):
+    response.status_code = 200
+    return "The Agent is still ticking..."
