@@ -18,7 +18,8 @@ import json
 from langchain.schema import SystemMessage
 from fastapi import Depends, FastAPI, Response
 from fastapi.security.api_key import APIKey
-import auth 
+import auth
+import redit 
 #import streamlit as st
 
 load_dotenv()
@@ -198,7 +199,7 @@ async def researchAgent(query: Query, api_key: APIKey = Depends(auth.get_api_key
 @app.post("/redit")
 async def reditAgent(redit: Redit, api_key: APIKey = Depends(auth.get_api_key)):
     subredit = redit.subredit
-    return f"Hit the subredit: {subredit}"
+    return redit.getHotPosts(subredit)
 
 @app.get("/health")
 def health(response: Response):
