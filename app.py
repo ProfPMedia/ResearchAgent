@@ -180,15 +180,25 @@ agent = initialize_agent(
 # 4. Set this as an API endpoint via FastAPI
 app = FastAPI()
 
+# Pydantic model for the input query
 class Query(BaseModel):
     query: str
 
-@app.post("/")
+# Pydantic model for the subredit
+class Redit(BaseModel):
+    subredit: str
+
+@app.post("/research")
 async def researchAgent(query: Query, api_key: APIKey = Depends(auth.get_api_key)):
     query = query.query
     content = agent({"input": query})
     actual_content = content['output']
     return actual_content
+
+@app.post("/redit")
+async def reditAgent(redit: Redit, api_key: APIKey = Depends(auth.get_api_key)):
+    subredit = redit.subredit
+    return f"Hit the subredit: {subredit}"
 
 @app.get("/health")
 def health(response: Response):
