@@ -19,7 +19,7 @@ from langchain.schema import SystemMessage
 from fastapi import Depends, FastAPI, Response
 from fastapi.security.api_key import APIKey
 import auth
-import redit 
+import reddit 
 #import streamlit as st
 
 load_dotenv()
@@ -186,8 +186,8 @@ class Query(BaseModel):
     query: str
 
 # Pydantic model for the subredit
-class Redit(BaseModel):
-    subredit: str
+class RedditObj(BaseModel):
+    subreddit: str
 
 @app.post("/research")
 async def researchAgent(query: Query, api_key: APIKey = Depends(auth.get_api_key)):
@@ -197,9 +197,9 @@ async def researchAgent(query: Query, api_key: APIKey = Depends(auth.get_api_key
     return actual_content
 
 @app.post("/redit")
-async def reditAgent(redit: Redit, api_key: APIKey = Depends(auth.get_api_key)):
-    subredit = redit.subredit
-    return redit.getHotPosts(subredit)
+async def reditAgent(reddit_obj: RedditObj, api_key: APIKey = Depends(auth.get_api_key)):
+    subreddit = reddit_obj.subreddit
+    return reddit.getHotPosts(subreddit)
 
 @app.get("/health")
 def health(response: Response):
