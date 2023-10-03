@@ -1,9 +1,7 @@
 import os
 from dotenv import load_dotenv
-
-from langchain import PromptTemplate
+from langchain.prompts import PromptTemplate
 from langchain.agents import initialize_agent, Tool
-from langchain.agents import AgentType
 from langchain.chat_models import ChatOpenAI
 from langchain.prompts import MessagesPlaceholder
 from langchain.memory import ConversationSummaryBufferMemory
@@ -103,7 +101,7 @@ def summary(objective, content):
     SUMMARY:
     """
     map_prompt_template = PromptTemplate(
-        template=map_prompt, input_variables=["text", "objective"])
+        template=map_prompt, input_variables=["content", "objective"])
 
     summary_chain = load_summarize_chain(
         llm=llm,
@@ -171,7 +169,7 @@ memory = ConversationSummaryBufferMemory(
 agent = initialize_agent(
     tools,
     llm,
-    agent=AgentType.OPENAI_FUNCTIONS,
+    agent="openai-functions",
     verbose=True,
     agent_kwargs=agent_kwargs,
     memory=memory,
@@ -185,7 +183,7 @@ app = FastAPI()
 class Query(BaseModel):
     query: str
 
-# Pydantic model for the subredit
+# Pydantic model for the subreddit
 class RedditObj(BaseModel):
     subreddit: str
 
@@ -196,10 +194,12 @@ async def researchAgent(query: Query, api_key: APIKey = Depends(auth.get_api_key
     actual_content = content['output']
     return actual_content
 
-@app.post("/redit")
-async def reditAgent(reddit_obj: RedditObj, api_key: APIKey = Depends(auth.get_api_key)):
+@app.post("/reddit")
+async def redditAgent(reddit_obj: RedditObj, api_key: APIKey = Depends(auth.get_api_key)):
     subreddit = reddit_obj.subreddit
-    return reddit.getHotPosts(subreddit)
+    content = await reddit.getHotPosts(subreddit)
+    return content
+ 
 
 @app.get("/health")
 def health(response: Response):

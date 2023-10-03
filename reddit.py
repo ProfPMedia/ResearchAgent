@@ -1,36 +1,78 @@
-from datetime import datetime
-import pandas as pd
-import praw
+import asyncpraw
 import os
+import openai
+from langchain.chat_models import ChatOpenAI
+from langchain.schema import Document
+from langchain.chains.llm import LLMChain
+from langchain.prompts import PromptTemplate
+from langchain.chains.combine_documents.stuff import StuffDocumentsChain
+from langchain.text_splitter import RecursiveCharacterTextSplitter
 
+# How many posts
+NUM_HOT_POSTS = 10
+MAX_CHAR_LENGTH = 50000
 
-def getHotPosts(subreddit: str) -> str:
-    # How many posts
-    posts = 10
-
+async def getHotPosts(subreddit_topic: str, num_posts: int = NUM_HOT_POSTS) -> str:
+    
     # Authenticate
-    reddit = praw.Reddit(
+    reddit = asyncpraw.Reddit(
         client_id=os.getenv("REDIT_CLIENT_ID"),
         client_secret=os.getenv("REDIT_CLIENT_SECRET"),
         user_agent=os.getenv("REDIT_USER_AGENT")
     )
 
-    submissions = []
-    comments = []
-    result = ""
-    subreddit = reddit.subreddit(subreddit)
-    # Read each post and its comments and generate posts and comments dataframes
-    for submission in subreddit.hot(limit=posts):
-        submissions.append({'date':datetime.fromtimestamp(submission.created_utc),'subredit':subreddit,'title':submission.title,'score':submission.score,'comments':submission.num_comments,'id':submission.id,'url':submission.url,'post':submission.selftext})
-        submission.comments.replace_more(limit=0)
-        for comment in submission.comments.list():
-            comments.append({'id':submission.id,'comment':comment.body})
-    pdf = pd.DataFrame(submissions)
-    cdf = pd.DataFrame(comments)
-    if len(pdf)>0:
-        for i in range(len(pdf)):
-            result = result + f"SUBREDDIT: {subreddit}\n TITLE: {pdf.iloc[i].title}\n POST: {pdf.iloc[i].post}\n COMMENTS: "
-            if len(cdf)>0:
-                for c in cdf[cdf.id==pdf.iloc[i].id].comment:
-                    result = result + c + "\n"
-    return result
+    # Iterate throgu the top hot posts in this subredit
+    results=[]
+    subreddit = await reddit.subreddit(subreddit_topic, fetch=True)
+    async for submission in subreddit.hot(limit=num_posts):
+        result = ""
+        result = result + f"RefUrl: {submission.url}\n"
+        result = result + f"Title: {submission.title}\n"
+        result = result + f"Post: {submission.selftext}\n"
+        comments = await submission.comments()
+        await comments.replace_more(limit=None)
+        all_comments = comments.list()
+        for comment in all_comments:
+            result = result + f"Comment: {comment.body}\n"
+
+        # Summarize the Redit Post and add it to the results.
+        pre_prompt = f"""
+        Your task is to generate a short summary of the {subreddit_topic} subreddit \ 
+        post from reddit. 
+        """
+        prompt_template = pre_prompt + """
+        Summarize the post below, delimited by triple \
+        backticks by including the subreddit, the main topic or question, points or answers given, \
+        and list any urls given under a distinct reference section one URL per line. \
+        Take extra care to not repeat yourself. In particular only list a given URL once. \
+        Output the summary in a JSON object with a key subreddit for the given subreddit, a key topic for the main topic which holds a string, \
+        a key points for main points or answers which is an array of strings and a key for the references \
+        which is an arrary of strings.
+        Post: ```{text}```
+        """
+    
+        prompt = PromptTemplate.from_template(prompt_template)
+        
+        # Define LLM chain
+        llm = ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo-16k")
+        llm_chain = LLMChain(llm=llm, prompt=prompt)
+        
+        # Define StuffDocumentsChain
+        stuff_chain = StuffDocumentsChain(
+            llm_chain=llm_chain, document_variable_name="text"
+        )
+        
+        # Split text
+        text_splitter = RecursiveCharacterTextSplitter.from_tiktoken_encoder(chunk_size=1000, chunk_overlap=0)
+    
+        if len(result) < MAX_CHAR_LENGTH:
+            texts = text_splitter.split_text(result)
+        else:
+            print(f"truncated post of length {len(result)}")
+            texts = text_splitter.split_text(result[0:MAX_CHAR_LENGTH])
+
+        # Create multiple documents
+        docs = [Document(page_content=t) for t in texts]
+        results.append(stuff_chain.run(docs))
+        
+    return results
