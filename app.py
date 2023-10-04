@@ -197,7 +197,8 @@ async def researchAgent(query: Query, api_key: APIKey = Depends(auth.get_api_key
 @app.post("/reddit")
 async def redditAgent(reddit_obj: RedditObj, api_key: APIKey = Depends(auth.get_api_key)):
     subreddit = reddit_obj.subreddit
-    content = await reddit.getHotPosts(subreddit)
+    print(subreddit,5)
+    content = await reddit.getHotPosts(subreddit,5)
     return content
  
 
