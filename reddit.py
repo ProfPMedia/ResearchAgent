@@ -37,15 +37,15 @@ async def getHotPosts(subreddit_topic: str, num_posts: int = NUM_HOT_POSTS) -> s
 
         # Summarize the Redit Post and add it to the results.
         pre_prompt = f"""
-        Your task is to generate a short summary of the {subreddit_topic} subreddit \ 
-        post from reddit. 
+        Your task is to generate a short summary of the reddit {subreddit_topic} subreddit \ 
+        post id {submission.id}. 
         """
         prompt_template = pre_prompt + """
         Summarize the post below, delimited by triple \
         backticks by including the subreddit, the main topic or question, points or answers given, \
         and list any urls given under a distinct reference section one URL per line. \
         Take extra care to not repeat yourself. In particular only list a given URL once. \
-        Output the summary in a JSON object with a key subreddit for the given subreddit, a key topic for the main topic which holds a string, \
+        Output the summary in a JSON object with a key id for the post id, key subreddit for the given subreddit, a key topic for the main topic which holds a string, \
         a key points for main points or answers which is an array of strings and a key for the references \
         which is an arrary of strings.
         Post: ```{text}```
