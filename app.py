@@ -186,6 +186,7 @@ class Query(BaseModel):
 # Pydantic model for the subreddit
 class RedditObj(BaseModel):
     subreddit: str
+    numposts: int
 
 @app.post("/research")
 async def researchAgent(query: Query, api_key: APIKey = Depends(auth.get_api_key)):
@@ -197,8 +198,9 @@ async def researchAgent(query: Query, api_key: APIKey = Depends(auth.get_api_key
 @app.post("/reddit")
 async def redditAgent(reddit_obj: RedditObj, api_key: APIKey = Depends(auth.get_api_key)):
     subreddit = reddit_obj.subreddit
-    print(subreddit,5)
-    content = await reddit.getHotPosts(subreddit,5)
+    numposts = reddit_obj.numposts
+    print(subreddit,numposts)
+    content = await reddit.getHotPosts(subreddit,numposts)
     return content
  
 
