@@ -203,6 +203,13 @@ async def redditAgent(reddit_obj: RedditObj, api_key: APIKey = Depends(auth.get_
     content = await reddit.getHotPosts(subreddit,numposts)
     return content
  
+@app.post("/reddit/category")
+async def redditCategoryAgent(reddit_obj: RedditObj, api_key: APIKey = Depends(auth.get_api_key)):
+    subreddit = reddit_obj.subreddit
+    numposts = reddit_obj.numposts
+    print(subreddit,numposts)
+    content = await reddit.getRedditPosts(subreddit,numposts)
+    return content
 
 @app.get("/health")
 def health(response: Response):
