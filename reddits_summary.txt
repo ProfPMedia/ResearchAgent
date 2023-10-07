@@ -1,0 +1,623 @@
+datascience
+{
+  "id": "16xmlky",
+  "subreddit": "datascience",
+  "topic": "Considering internships and potential challenges",
+  "points": [
+    "The OP is considering data analyst roles for internships, but is concerned about being overlooked for data science internships due to their major not being listed as a preferred major.",
+    "They are also considering transferring to a different campus but have concerns about housing and transportation.",
+    "The OP is looking for a video that is no longer being sent and is trying to find it online.",
+    "They are also looking for a way to record the clients they have helped for authenticity.",
+    "The OP is considering transitioning into business analytics and wonders if it can be justified to universities.",
+    "They express dissatisfaction with their current job, finding it boring and preferring project management.",
+    "The OP asks for guidance on optimizing models for problems and mentions their experience in Python, R, and SQL.",
+    "They are seeking advice on categorizing universities as safe, ambitious, over-ambitious, or not possible.",
+    "The OP discusses the value of education in increasing job prospects.",
+    "They mention that grade inflation is not a significant concern for employers.",
+    "The OP decides not to move due to scholarships and the cost of owning a car."
+  ],
+  "references": []
+}
+{
+  "id": "171872q",
+  "subreddit": "datascience",
+  "topic": "The most sought-after Data Science skills",
+  "points": [
+    "Communication is the most desired skill in Data Science job openings",
+    "Some commenters argue that communication is essential for explaining methodologies and findings to senior management",
+    "Others point out that job descriptions may not accurately reflect the actual job requirements",
+    "Communication is important for any technical job, not just Data Science",
+    "There is a discussion about the importance of communication skills in job postings",
+    "Job ads mentioning deep learning or computer vision often mention PyTorch or TensorFlow, leading to the misconception that deep learning is a major requirement in most jobs",
+    "Including Scikit-Learn in the list of skills alongside programming is unnecessary",
+    "The absence of 'machine learning' in the list of skills is strange, while 'statistics' is included",
+    "Soft skills, including communication, are considered essential and cannot be automated",
+    "Communication is the most important skill in any job, regardless of role or degree required",
+    "Over half the time spent on projects at work is dedicated to finding the best way to communicate findings",
+    "Bad communication skills can hinder career growth in data science",
+    "Communication is important for aligning business problems, designing architecture, and prioritizing work",
+    "Job postings may not accurately reflect the requirements of the role",
+    "PhD in data science is a significant investment and may not always provide a high return on investment",
+    "Python and SQL are relatively easy to learn, but mastering SQL at an advanced level takes time",
+    "ML engineer jobs often require SQL experience",
+    "Data visualization is important for effective communication",
+    "Technical skills alone are not enough, clear communication is key",
+    "The majority of users in this subreddit are not practitioners",
+    "Data scientists are not as well paid because of this",
+    "Less than 10% of data science jobs require knowledge of PyTorch",
+    "Soft skills are important in data science",
+    "Being skeptical of the data is a valuable skill",
+    "Analysts produce metrics, statisticians interpret them",
+    "Data scientists handle heavier stats work, analysts handle data engineering",
+    "Not all problems are best solved by deep learning models",
+    "Companies are switching to DL over stats/tree models for tabular data",
+    "PyTorch is the 3rd most required framework in MLE jobs",
+    "Quantifying uncertainty is important but people dislike it",
+    "Scale and data subsetting are important considerations in large datasets",
+    "It's impossible to know.",
+    "They constantly make decisions without certainty.",
+    "Now I just say 100% lets do it."
+  ],
+  "references": [
+    "https://jobs-in-data.com/blog/machine-learning-vs-data-scientist",
+    "https://www.reddit.com/r/datascience/comments/171872q",
+    "https://stripe.com/blog/powering-ml-at-stripe",
+    "https://eng.uber.com/eta/",
+    "https://www.uber.com/en-CA/blog/deepeta-how-uber-predicts-arrival-times/"
+  ]
+}
+{
+  "id": "171jptd",
+  "subreddit": "datascience",
+  "topic": "Is there any benefit for a Data Analyst to learn C#?",
+  "points": [
+    "Learning C# can benefit a data analyst by expanding their skill set and providing a competitive edge",
+    "It allows for automation of tasks and the creation of desktop apps for data analysis",
+    "Learning C# improves one's ability to learn new skills and makes them a well-rounded professional",
+    "C# may be important for data analysts working with an existing C# codebase or in a Microsoft ecosystem",
+    "Learning C# is not necessary for data analysis",
+    "Learning C or Rust can provide a better understanding of computer science and programming",
+    "F# is recommended as an alternative to C# for data work",
+    "VBA is not recommended for daily tasks in Office, Python or C# can be used instead",
+    "Legacy VBA scripts can be replaced with Python scripts for faster execution",
+    "F# has good libraries for data work and can transpile to other languages",
+    "The worst part is that it is pretty niche with not as many tutorials as other languages.",
+    "There are probably 100 other more relevant things to learn.",
+    "Knowing another language would be beneficial.",
+    "You can't build an app for your DS tool in that language.",
+    "VBA has some unique use cases.",
+    "R is also a language used for data science.",
+    "There is no evidence of any Elon Musk love on this sub."
+  ],
+  "references": [
+    "https://www.reddit.com/r/datascience/comments/171jptd/is_there_any_benefit_for_a_data_analyst_to_learn_c/",
+    "https://media.tenor.com/k6zAYutcVfoAAAAC/thought-we-wouldnt-notice-but-we-did-robert-downey-jr.gif"
+  ]
+}
+{
+  "id": "171eura",
+  "subreddit": "datascience",
+  "topic": "Comparison of foundational models in AI and data science",
+  "points": [
+    "Foundational models in AI are more encompassing, while data science models are more specific",
+    "AI models are more complex and computationally intensive, while data science models are simpler",
+    "AI models require large datasets, while data science models can work with smaller datasets",
+    "AI models are highly adaptable, while data science models require more manual adjustments",
+    "Data science models are often domain-specific, while AI models aim to be more general-purpose",
+    "Data science models like linear regression are easier to interpret than complex AI models"
+  ],
+  "references": [
+    "https://hai.stanford.edu/news/reflections-foundation-models",
+    "https://hai.stanford.edu/news/what-foundation-model-explainer-non-experts"
+  ]
+}
+{
+  "id": "170q724",
+  "subreddit": "datascience",
+  "topic": "Data Science not in demand.",
+  "points": [
+    "Data Science positions generally require advanced degrees.",
+    "Not having a bachelors degree further pushes you out of the potential hire pool.",
+    "It is better to start in a Data Analyst or Business Analyst position and generate years of experience.",
+    "The market is oversaturated with candidates holding advanced degrees and having relevant work experience.",
+    "An associate degree and certificates are not comprehensive enough to secure employment.",
+    "Seek out internships or entry-level roles in related fields to get started in the industry.",
+    "Get a bachelors degree in a related field or achieve a masters degree or PhD.",
+    "Demand for data scientists outstrips supply",
+    "Job market is competitive with layoffs",
+    "Entry level market is saturated",
+    "Experienced data scientists are in demand",
+    "Open positions go to those with advanced degrees or experience",
+    "Resume may not be competitive enough",
+    "Education and relevant experience are important",
+    "DS roles are highly academic",
+    "Build a portfolio to showcase abilities",
+    "Entry level positions may be called data analysts or BI analysts",
+    "Citizenship may affect job opportunities",
+    "Demand for data scientists is expected to pick up by end of year",
+    "The best candidates for data science positions usually have advanced technical degrees and several years of experience",
+    "Data science is not an entry-level job",
+    "Having a bachelor's degree in data science is not enough",
+    "Professional certificates are not highly valued without experience",
+    "Finding a data analyst role is a good way to start in the field",
+    "The market is currently saturated with high-quality candidates",
+    "Graduate-level coursework and research or industry experience are preferred",
+    "Getting experience in a business operations role or data entry is recommended",
+    "Having a bachelor's degree in math, CS, econ, or related fields is preferred",
+    "Master's or PhD degrees in data science or related fields are preferred",
+    "Work experience is relevant and can make you stand out",
+    "There is more demand for senior data science positions than junior positions",
+    "Data analytics boot camps and courses may not teach the necessary math and stats",
+    "Demand for data science is no longer growing, but supply of graduates continues to increase",
+    "Most companies don't have the use case and data for data science",
+    "High paying DS jobs were gone for a period of time but are now back",
+    "Consider getting a bachelor's degree and learning an industry",
+    "Data engineering is currently in high demand",
+    "An associate's degree + some certs is not enough for a data science career",
+    "There is an overproduction of PhDs and master's degrees relative to demand in academia and industry",
+    "Many individuals with hard science degrees are retooling for data science",
+    "These individuals often come from prestigious schools and bring valuable skills and credentials",
+    "They are willing to work for lower salaries and put up with more from employers",
+    "There is a flood of cheap and overqualified labor in the data science field",
+    "Managers prefer to hire PhDs for their credibility and ability to take blame for mistakes",
+    "The job market for data science has become more competitive",
+    "There is a lack of demand for data scientists compared to other roles",
+    "Having a higher degree and several years of experience is often required",
+    "There is little standardization in role names and qualifications",
+    "There are opportunities in adjacent industries and government positions",
+    "Government contracting companies have a growing demand for data scientists",
+    "A startup in Bangalore has experienced significant growth in their data science team",
+    "There is demand for freshers to start as Data Scientists, but probabilities are not in your favor",
+    "Networking is important to increase your chances",
+    "Many entry-level positions are already saturated with candidates who have more academic and technical rigor",
+    "Some people start as Data Analysts and work their way up to Data Scientist roles",
+    "The first DS job is always the hardest, especially without a degree",
+    "Highlighting skills in presenting to upper management can be beneficial",
+    "The demand for Data Scientists has decreased and seniority is now in demand",
+    "The market is currently experiencing an excess supply of skilled individuals in the field",
+    "The media portrays an unrealistic image of the need for skilled individuals",
+    "Eventually, the market will return to a state of balance",
+    "A bachelor's degree and a few years of analyst experience may not be enough to succeed in a data science role",
+    "Data science jobs often prefer candidates with advanced degrees and subject matter expertise",
+    "The market for data science jobs is oversaturated, making it harder to find opportunities",
+    "Networking and strong recommendations can help overcome the recruiter wall",
+    "Kaggle competition projects and basic Python skills are not sufficient preparation for the actual job",
+    "Large agencies may have hiring freezes, especially in Q4",
+    "Entry-level positions in data science are saturated due to low barriers to entry",
+    "Good senior candidates are hard to come by in data science due to the combination of soft skills, technical skills, and domain insights required.",
+    "Hiring for entry-level data science positions has been particularly difficult this year.",
+    "Having a bachelor's degree is often a requirement for data science positions.",
+    "Data science is evolving, and now requires more than just knowledge of statistics and Python.",
+    "Starting in data engineering or software engineering can be a good path to becoming a data scientist.",
+    "Connections and fitting the team's needs are important factors in landing a data science role.",
+    "Domain experience can be valuable for transitioning into a data analyst role.",
+    "PhD holders with subject matter expertise are often involved in rigorous data science work.",
+    "Having certificates and a degree in physics may not be enough to land a data analyst role",
+    "Senior analyst roles are often filled by people with a background in Maths",
+    "Even with experience as an analytics manager, getting responses for roles can still be difficult",
+    "Applying to related positions like data analyst or business analyst may still result in rejection",
+    "Difficulty of getting a job as an entry business analyst with just a portfolio and degree",
+    "The demand is for people who can generate profits through inquisitive analysis of complex niche data trends",
+    "Companies like IBM, Microsoft, and Google have put out free courses to saturate the market at the entry level",
+    "DS has been on the decline, with ML being the focus now",
+    "Specialist ML/AI roles have delivered more value than general DS roles",
+    "A solid degree in Computer Science, Statistics, or Data Science is preferred",
+    "Relevant internship experience is important for competing for entry-level DS jobs",
+    "Data science is a scientific field that requires doing the things that PhDs do",
+    "One suggestion is to gain experience through guided projects and personal projects",
+    "Seek input on gaining relevant experience",
+    "Experience is highly valued in the field",
+    "Resume review and feedback has been received",
+    "Discussion on the importance of a relevant degree",
+    "Importance of personal learning and independent learning",
+    "Passionate learner seeking technical employment",
+    "OP has experience with data engineering and data analysis, but lacks a Bachelor's Degree",
+    "Discussion on the value of online certificates for learning technical skills",
+    "The difficulty of competing with cheap and overqualified labor in the industry",
+    "There are a lot of applicants applying for data science positions",
+    "Data science teams are often understaffed due to being a cost center",
+    "Alternative roles in tech include data analyst, business analyst, and software developer/engineer with ML/AI emphasis",
+    "Personal experience and technical skills of the poster",
+    "Limited opportunities for entry-level data science roles without a bachelor's degree",
+    "Challenges in getting internships without a bachelor's degree",
+    "Seniority is in demand in the field of data science",
+    "Subject matter expertise can be learned quickly",
+    "Statistical models are generally universal",
+    "Domain expertise is beneficial but can be obtained quickly",
+    "Access to data and software is crucial",
+    "Internet speeds up the learning process",
+    "Internship experience is important for hiring managers",
+    "Suggested listing three levels of projects: Supervised, Unsupervised, and Generative",
+    "Courses are created because people buy them",
+    "Many questions asked lack a scientific mindset",
+    "Actual researchers are few and paid well",
+    "Most companies have limited good data sources",
+    "Getting an analyst role and working up is a good strategy",
+    "Freelancing and university internships are recommended",
+    "Becoming an expert in something and having good communication skills are important",
+    "Resume review by data scientists or hiring managers is suggested",
+    "Using networking and LinkedIn to get better context and resume review",
+    "Availability of information on the internet has led to increased competition",
+    "Having a solid pedigree can help with getting recommendations",
+    "It's important to show what you can do and have people vouch for you",
+    "Consider data engineering or software engineering roles",
+    "Educational credentials matter less than what you have done or can demonstrate",
+    "Non-technical experience does not count towards a data science job",
+    "University recruiting is important for gaining experience",
+    "Having high caliber people stress test your candidacy is beneficial",
+    "Employers may not take your word for it without relevant professional experience",
+    "Projects on GitHub are not as important as helping a business using data skills",
+    "Statistics and math skills can be built by reading and working through a textbook",
+    "Bootcamps are not recommended",
+    "LinkedIn is a good platform for finding data science opportunities",
+    "The number of applicants does not necessarily mean competition for a single job"
+  ],
+  "references": [
+    "https://www.reddit.com/r/datascience/comments/170q724/data_science_not_in_demand/",
+    "https://www.collegeatlas.org/wp-content/uploads/2017/02/Median-Annual-Earnings-by-Educational-Attainment.png",
+    "https://www.reddit.com/r/datascience/comments/170q724"
+  ]
+}
+{
+  "id": "171mmpq",
+  "subreddit": "datascience",
+  "topic": "Plotting pre-calculated embeddings onto tensorboard projector",
+  "points": [
+    "The post is asking for help on how to use tensorboard to project pre-calculated embeddings without the need for metadata.",
+    "The poster is looking for tutorials or resources on this topic."
+  ],
+  "references": [
+    "https://www.reddit.com/r/datascience/comments/171mmpq/plotting_precalculated_embeddings_onto/"
+  ]
+}
+{
+  "id": "171mgku",
+  "subreddit": "datascience",
+  "topic": "Huge data issues",
+  "points": [
+    "The data are fundamentally flawed, joins don\u2019t work and there is no ownership",
+    "Seeking advice on leading change in such a situation",
+    "Suggestions include cleaning up data at the source, documenting data lineage, using data governance tooling, and influencing others on the team",
+    "Start small and be the change"
+  ],
+  "references": [
+    "https://www.reddit.com/r/datascience/comments/171mgku/huge_data_issues/"
+  ]
+}
+{
+  "id": "171magw",
+  "subreddit": "datascience",
+  "topic": "Eye Tracking Data",
+  "points": [
+    "The poster is a neuroscience Ph.D. student working with eye-tracking data and is looking for alternative approaches to fitting the data to a GLM",
+    "They are collecting eye-tracking data in various experimental contexts and are interested in leveraging more information from the data",
+    "One experiment focuses on participants looking for a certain stimulus among distractor stimuli, while another looks at overall gaze stability to infer cognitive mechanisms",
+    "They are considering using logistic regression or SVM for analysis and are open to suggestions",
+    "A comment mentions that logistic regression is a form of generalized linear model",
+    "Another comment asks about the goals of the experiment/model and suggests that GLMs are often used to determine the fit of models with important predictors",
+    "A third comment questions the need for SVM over logistic regression, as SVM may not map straightforwardly to probabilities"
+  ],
+  "references": [
+    "https://www.reddit.com/r/datascience/comments/171magw/eye_tracking_data/"
+  ]
+}
+{
+  "id": "170jlh2",
+  "subreddit": "datascience",
+  "topic": "Concerns about people expecting high salaries as data scientists after a master's degree with no experience",
+  "points": [
+    "Grad schools often sell the idea of high-paying data science jobs after a master's degree with no experience, but it's not realistic",
+    "Work history is an important factor in becoming a data scientist",
+    "Online courses are becoming more valuable and can be a substitute for grad school",
+    "Stats classes and professors are often not good",
+    "Analytics roles have a lower barrier of entry compared to ML-focused data jobs",
+    "Foreigners may have a tougher time getting data science jobs",
+    "Wyzant, UpWork, and Fiverr are platforms for finding data science tutors and jobs",
+    "ML-focused roles are often seen as unattainable",
+    "Building ML expertise requires time and a strong foundation in linear algebra, software engineering, and probability",
+    "Some PhD graduates from reputable programs can start with salaries around $200k and reach $250k after 2 years",
+    "Taking an active interest in ML early on is important for success in the field",
+    "Expecting a high salary right after a bachelor's degree is unrealistic"
+  ],
+  "references": [
+    "https://www.wyzant.com/",
+    "https://www.upwork.com/",
+    "https://www.fiverr.com/"
+  ]
+}
+{
+  "id": "1717sp8",
+  "subreddit": "datascience",
+  "topic": "Software Engineering to ML engineering/MLOps",
+  "points": [
+    "Software experience is valued in the world of machine learning on the operations side",
+    "There is a lot of demand for people who can deploy models, do A/B testing, make APIs, and do some light modeling",
+    "SWE experience is more valuable than DS for ML engineering and MLOps roles"
+  ],
+  "references": [
+    "https://www.reddit.com/r/datascience/comments/1717sp8/software_engineering_to_ml_engineeringmlops/"
+  ]
+}
+dataanalysis
+{
+  "id": "16x3xqa",
+  "subreddit": "dataanalysis",
+  "topic": "Megathread: How to Get Into Data Analysis Questions & Resume Feedback (October 2023)",
+  "points": [
+    "Welcome to the \"How do I get into data analysis?\" megathread",
+    "This thread is for questions asking for individualized career advice",
+    "Participants can offer suggestions and answer questions",
+    "Past threads are available for reference",
+    "Useful resources are provided",
+    "User has three phone screens for GIS Analyst positions",
+    "User asks if being able to do hacker rank and leetcode SQL questions is enough for the job",
+    "User asks for recommendations on resume content",
+    "User asks for suggestions on a community for data analysts to connect",
+    "User asks for guidance on whether to focus on portfolio projects or certifications",
+    "User expresses concerns about limited upward mobility in their current data analyst role in a library",
+    "The poster has experience with Power BI, Python, and SQL, but feels like a beginner in these skills",
+    "They have concerns about lacking expertise in a specific area and transitioning to higher-paying roles",
+    "They have a master's degree and subject matter expertise in libraries and research/publishing",
+    "They are seeking guidance on bridging the gap between their current skill level and industry expectations",
+    "They are also looking for advice on transitioning from higher education to a higher-paying role",
+    "They have shared their resume for reference: [https://imgur.com/a/OkgzJFd](https://imgur.com/a/OkgzJFd)",
+    "They are wondering if they should write a cover letter for every job application",
+    "They are working on a project to add to their resume and using Leetcode and American dream academy/coursera for technical training",
+    "They are asking for suggestions on job titles to search for",
+    "They have a question about using Jupyter in Visual Studio Code on a Mac",
+    "They are considering trying BI analysis part-time alongside their current job in account management",
+    "They are interested in finding a path that combines their finance background with data analysis",
+    "Consider pursuing a degree in applied data analytics",
+    "Focus on programming, statistics, and social research",
+    "Build a portfolio to showcase your skills",
+    "Consider using websites like GitHub, Kaggle, or Tableau for your portfolio",
+    "Explore different industries for data analysis roles",
+    "Find projects for your portfolio that align with your interests",
+    "Consider a MSc conversion in Data Analytics with a BSc in Quantity Surveying",
+    "Brush up on SQL and learn Python",
+    "Target roles in analytics, consulting, or market research",
+    "Plan to have 4-5 projects in your portfolio",
+    "Consider salary ranges for data analysis roles in your location",
+    "Getting into the field in general",
+    "Improving resume",
+    "Other certificates to look into",
+    "Working on projects for a GitHub portfolio",
+    "Learning Tableau and Power BI",
+    "Best courses on Udemy for getting a job as a data analyst",
+    "Choosing a minor for an MIS major",
+    "Accounting minor vs. Finance minor vs. Marketing minor",
+    "Implementing data analytics as an accounting student",
+    "Looking for feedback on a resume for data analyst roles",
+    "Seeking advice on career change to data analyst position",
+    "Congratulating someone on landing a role",
+    "Asking for insights on how they landed their role",
+    "Asking about working at Wattpad",
+    "Discussion on applying for entry-level roles and the importance of experience",
+    "Suggesting applying in the industry they already have accounting experience in",
+    "Sharing personal experience of transitioning from accounting to data analytics",
+    "Asking for resources for learning data analytics",
+    "Providing a possible pathway for transitioning into the healthcare sector as an analyst",
+    "Working in the university system can help in getting a quantitative or analytical role in the Dept of Health or in the state's Medicaid program",
+    "Analyzing data for healthcare stakeholders to save money or influence policy development",
+    "Building relationships with people in the healthcare data field",
+    "Mentioning career change in cover letter can be positive",
+    "Using data visualization platforms like Tableau, Power BI, and Looker",
+    "Considering online courses, such as LinkedIn Learning",
+    "Focusing on finance career and using data analysis skills as a competitive advantage",
+    "Creating a portfolio with specific data analysis projects",
+    "Visa requirements can make it harder to find a job",
+    "Start applying for jobs while building a portfolio",
+    "Consider AML (Anti-Money Laundering) jobs",
+    "Getting law enforcement experience for crime analysis roles",
+    "Comparison of salaries for data analysts, data scientists, and business analysts",
+    "Imposter syndrome in data analysis",
+    "Personal experience of landing an internal role with no experience",
+    "Lower demand for business analysts compared to data analysts",
+    "Consider improving your resume and credentials to stand out to recruiters",
+    "Explore Kaggle and take the Python course there",
+    "Follow Ken Jee's playlist on creating a project from scratch",
+    "Consider moving within the state government to foster a transition",
+    "Build a portfolio of projects to apply for remote jobs",
+    "Seek advice from people in the medical school at your university for healthcare work",
+    "Join Slack and Discord communities for data analytics",
+    "Consider auditing a course to gain exposure to SAS"
+  ],
+  "references": [
+    "https://old.reddit.com/r/dataanalysis/comments/10r5eve/announcement_limiting_posts_related_to_career/",
+    "https://old.reddit.com/r/dataanalysis/comments/10r5f3f/megathread_how_to_get_into_data_analysis/",
+    "https://old.reddit.com/r/dataanalysis/comments/11k8itp/megathread_how_to_get_into_data_analysis/",
+    "https://old.reddit.com/r/dataanalysis/comments/12av9m5/megathread_how_to_get_into_data_analysis/",
+    "https://old.reddit.com/r/dataanalysis/comments/137ze7d/megathread_how_to_get_into_data_analysis/",
+    "https://old.reddit.com/r/dataanalysis/comments/13ym8e2/megathread_how_to_get_into_data_analysis/",
+    "https://old.reddit.com/r/dataanalysis/comments/14o43h1/megathread_how_to_get_into_data_analysis/",
+    "https://old.reddit.com/r/dataanalysis/comments/15gvj84/megathread_how_to_get_into_data_analysis/",
+    "https://old.reddit.com/r/dataanalysis/comments/16bs64u/megathread_how_to_get_into_data_analysis/",
+    "https://old.reddit.com/r/dataanalysis/comments/10onhl2/want_to_become_an_analyst_start_here/",
+    "https://old.reddit.com/message/compose/?to=/r/dataanalysis",
+    "https://imgur.com/a/aUtd4CB",
+    "https://imgur.com/a/OkgzJFd",
+    "https://imgur.com/a/AOaw7fi",
+    "https://i.imgur.com/MgQ2iP7.jpg",
+    "https://imgur.com/rLZeYNE",
+    "https://drive.google.com/file/d/1OFogkzVZ-AeZJkhlGEfZFtcjvJQUaL_K/view?usp=drive_link",
+    "https://data-storyteller.medium.com/list-of-data-analytics-online-communities-70831894aef7"
+  ]
+}
+{
+  "id": "16bs64u",
+  "subreddit": "dataanalysis",
+  "topic": "Megathread: How to Get Into Data Analysis Questions & Resume Feedback (September 2023)",
+  "points": [
+    "Welcome to the \"How do I get into data analysis?\" megathread",
+    "Post your career-entry questions in this thread",
+    "Questions can include how to get into data analysis as a job or career, what courses to take, what certification or training program will help get a job, how to improve a resume, review of portfolio/project/GitHub, if a degree in a certain field can get a job in data analysis, and what questions will be asked in an interview",
+    "Participants can offer suggestions and answer questions",
+    "Refer to the announcement on February 1, 2023 for full details and background",
+    "Past threads include Megathread #1 (February 2023), Megathread #2 (March 2023), Megathread #3 (April 2023), Megathread #4 (May 2023), Megathread #5 (June 2023), Megathread #6 (July 2023), and Megathread #7 (August 2023)",
+    "Useful resources include u/milwted's post 'Want to become an analyst? Start here.' and a planned Wiki/FAQ for the subreddit"
+  ],
+  "references": [
+    "https://www.reddit.com/r/dataanalysis/comments/16bs64u/megathread_how_to_get_into_data_analysis/",
+    "https://old.reddit.com/r/dataanalysis/comments/10r5eve/announcement_limiting_posts_related_to_career/",
+    "https://old.reddit.com/r/dataanalysis/comments/10r5f3f/megathread_how_to_get_into_data_analysis/",
+    "https://old.reddit.com/r/dataanalysis/comments/11k8itp/megathread_how_to_get_into_data_analysis/",
+    "https://old.reddit.com/r/dataanalysis/comments/12av9m5/megathread_how_to_get_into_data_analysis/",
+    "https://old.reddit.com/r/dataanalysis/comments/137ze7d/megathread_how_to_get_into_data_analysis/",
+    "https://old.reddit.com/r/dataanalysis/comments/13ym8e2/megathread_how_to_get_into_data_analysis/",
+    "https://old.reddit.com/r/dataanalysis/comments/14o43h1/megathread_how_to_get_into_data_analysis/",
+    "https://old.reddit.com/r/dataanalysis/comments/15gvj84/megathread_how_to_get_into_data_analysis/",
+    "https://old.reddit.com/r/dataanalysis/comments/10onhl2/want_to_become_an_analyst_start_here/",
+    "https://old.reddit.com/message/compose/?to=/r/dataanalysis"
+  ]
+}
+{
+  "id": "171ciih",
+  "subreddit": "dataanalysis",
+  "topic": "Removing Duplicates",
+  "points": [
+    "Removing duplicates from a dataset without a unique identifier",
+    "Considering removing individuals with the same name and dob",
+    "Probability of two random people sharing the same name and dob is low",
+    "Suggestion to pull duplicates instead of deleting them",
+    "Importance of understanding how the data set was gathered",
+    "Documenting assumptions and steps taken",
+    "Caution against removing based on first name, last name, and dob",
+    "One suggestion is to include additional information like address to catch 100% of duplicates",
+    "Another suggestion is to use Excel's remove duplicates feature or Power Query",
+    "Power Query cannot solve the problem if there is no unique identifier",
+    "Alternative solutions include grouping/row_number() partitioning or using pandas/sql dbs",
+    "Data engineers may not always take care of non-unique values in data warehouses",
+    "Periodic tracking and duplicate files can create challenges in handling duplicates"
+  ],
+  "references": [
+    "https://www.reddit.com/r/dataanalysis/comments/171ciih/removing_duplicates/",
+    "https://math.stackexchange.com/questions/35791/birthday-problem-expected-number-of-collisions",
+    "https://support.microsoft.com/en-au/office/keep-or-remove-duplicate-rows-power-query-d9cffc69-dc5d-4d94-8b66-72779688874d#:~:text=Select%20a%20column%20by%20clicking,%3E%20Remove%20Rows%20%3E%20Remove%20Duplicates."
+  ]
+}
+{
+  "id": "171h8g6",
+  "subreddit": "dataanalysis",
+  "topic": "Free/open-source data visualization tools?",
+  "points": [
+    "PowerBI is pretty common.",
+    "Tableau has Tableau Public that is free.",
+    "You could learn Python/Plotly/Seaborn or R/ggPlot",
+    "DataWrapper looks interesting. I havent used it before but could be worth checking out.",
+    "Excel isn\u2019t free but you might have it. Google sheets has charts too.",
+    "PowerBI is going to kill Tableau. It's so easy to use and integrates with so many Microsoft apps, even PowerPoint. DAX is also pretty intuitive once you learn the core functions and concepts, which allows you to turn very complicated transformations into usable measures for any of our visuals. Don't know what the tableau equivalent is, but heard it's more complicated than it needs to be.",
+    "I'd suggest you learn PowerBI first if you want a higher chance of getting hired as a DA.",
+    "You can use R with flexdashboard to build pretty decent panels; Python and dash/plotly are also a great combo. There is also Apache superset which is exclusively for data Viz tasks but I found it kind of confusing, and if you are working with different data sources Grafana is your tool (specially if it is real time streaming data)",
+    "Shameless plug. But I\u2019m working on an app called sourcechart.io. But it\u2019s still in beta.",
+    "But no Mac version :(",
+    "I love Power BI. Currently using Tableau but me and my coworkers are asking if we can have Power Bi back lol.",
+    "Powerbi is still behind in many aspects.",
+    "Tableau has so much more integration with Python, R, and other programming languages with their build on add-ons. Especially when you start using scripts inside tableau with TabPy.",
+    "You also can\u2019t use powerbi on Mac."
+  ],
+  "references": [
+    "https://www.reddit.com/r/dataanalysis/comments/171h8g6/freeopensource_data_visualization_tools/",
+    "https://powerbi.microsoft.com/",
+    "https://www.tableau.com/",
+    "https://plotly.com/",
+    "https://seaborn.pydata.org/",
+    "https://ggplot2.tidyverse.org/",
+    "https://www.datawrapper.de/",
+    "https://www.microsoft.com/en-us/microsoft-365/excel",
+    "https://www.google.com/sheets/about/",
+    "https://flexdashboard.rstudio.com/",
+    "https://plotly.com/dash/",
+    "https://superset.apache.org/",
+    "https://grafana.com/",
+    "https://www.sourcechart.io/"
+  ]
+}
+{
+  "id": "171ej44",
+  "subreddit": "dataanalysis",
+  "topic": "DAX frustrated, countries? Filter? Huh?",
+  "points": [
+    "Are you creating new measures for the calculations? Thats the only way your calculations can be based on dynamic filters.",
+    "You probably need to post this to stackoverflow l. You need to include a sample of data, and concise explanation of what you want to do.",
+    "Btw if you haven\u2019t tried gpt yet that\u2019s a good resource as well.",
+    "What does the date filter accomplish? You don\u2019t mention a date field being in your table.",
+    "Gpt unfortunately not working"
+  ],
+  "references": [
+    "https://community.fabric.microsoft.com/t5/Desktop/Calculated-column-based-on-slicer-value/td-p/2414545"
+  ]
+}
+{
+  "id": "171jn2n",
+  "subreddit": "dataanalysis",
+  "topic": "Is there any benefit for a Data Analyst to learn C#?",
+  "points": [],
+  "references": [
+    "https://www.reddit.com/r/dataanalysis/comments/171jn2n/is_there_any_benefit_for_a_data_analyst_to_learn_c/"
+  ]
+}
+{
+  "id": "170jm49",
+  "subreddit": "dataanalysis",
+  "topic": "DataAnalyst.com - I launched a niche job board with hand curated data analyst jobs. Here's the summary of how it's going after the ninth month",
+  "points": [
+    "The post provides an update on the performance of DataAnalyst.com after nine months of launching",
+    "The main purpose of the post is to document the journey and engage with the r/DataAnalysis community",
+    "The goal of DataAnalyst.com is to become the #1 job board for data analysts",
+    "Statistics are provided for the number of jobs posted, visitors, apply now clicks, average session duration, pageviews, average time on page, returning visitors, Google impressions, Google clicks, newsletter subscriptions, and newsletter open rate",
+    "Google impressions and clicks are accelerating, with organic traffic outperforming direct for the first time",
+    "The author is unsure about the impact of recent Google SEO updates",
+    "The author is curious about the discrepancy between Google Search Console Clicks and Google Analytics Visitors",
+    "The author wonders where the 4,552 visitors came from"
+  ],
+  "references": [
+    "https://dataanalyst.com"
+  ]
+}
+{
+  "id": "171fqm4",
+  "subreddit": "dataanalysis",
+  "topic": "Do you use D3.js in your role?",
+  "points": [
+    "Taking a course that focuses on html, JavaScript, and D3. Was wondering how relevant it is in the real world.",
+    "Any other insights welcome!"
+  ],
+  "references": [
+    "https://www.reddit.com/poll/171fqm4"
+  ]
+}
+{
+  "id": "1715tzv",
+  "subreddit": "dataanalysis",
+  "topic": "I'm almost new to Data Analytics I really love the field. Please tell me some do's and don'ts for beginners. Also tell me some of the interesting departments you like the most.",
+  "points": [
+    "Practice directly what you learn from the basics of any tools or language",
+    "Continuous learning is important in the data world",
+    "Build a repository of frequently used code snippets and resources",
+    "Ask questions and seek help from your team",
+    "Find datasets from Kaggle for practice",
+    "Excel and SQL are important tools to focus on",
+    "Check out the tool from u/LukeBarousse for important skills for analysts globally and in India"
+  ],
+  "references": [
+    "https://datanerd.tech/"
+  ]
+}
+{
+  "id": "1719vpe",
+  "subreddit": "dataanalysis",
+  "topic": "Frustrating situation at my job",
+  "points": [
+    "The poster is a data analyst in a medium-sized company",
+    "The company had no data-related positions before the poster arrived",
+    "The poster is doing well with automations and dashboards",
+    "The problem is that the manager asks for generic metrics without providing more details",
+    "When the poster asks for more information, they are referred back to the manager",
+    "The poster feels like their work is not being used or valued",
+    "The company recently improved the poster's conditions to prevent them from leaving",
+    "The poster is asking for advice on how to approach this situation"
+  ],
+  "references": [
+    "https://www.reddit.com/r/dataanalysis/comments/1719vpe/frustrating_situation_at_my_job/"
+  ]
+}
