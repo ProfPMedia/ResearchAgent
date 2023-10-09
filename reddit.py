@@ -1,6 +1,6 @@
 import asyncpraw
 import os
-import openai
+import time
 from langchain.chat_models import ChatOpenAI
 from langchain.schema import Document
 from langchain.chains.llm import LLMChain
@@ -9,9 +9,9 @@ from langchain.chains.combine_documents.stuff import StuffDocumentsChain
 from langchain.chains.summarize import load_summarize_chain
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 
+
 # How many posts
-NUM_HOT_POSTS = 10
-MAX_CHAR_LENGTH = 50000
+NUM_POSTS = 10
 
 def getAPIref():
     return asyncpraw.Reddit(
@@ -20,7 +20,11 @@ def getAPIref():
         user_agent=os.getenv("REDIT_USER_AGENT")
     )
 
-async def getRedditPosts(subreddit_topic: str, num_posts: int = NUM_HOT_POSTS) -> list:
+"""
+Routine to get a specified number of the hot and top posts
+from a subreddit.
+"""
+async def getRedditPosts(subreddit_topic: str, num_posts: int = NUM_POSTS) -> list:
     # Authenticate
     reddit = getAPIref()
 
@@ -47,66 +51,70 @@ async def getRedditPosts(subreddit_topic: str, num_posts: int = NUM_HOT_POSTS) -
                })   
     return results
 
-async def getHotPosts(subreddit_topic: str, num_posts: int = NUM_HOT_POSTS) -> str:
-    
+
+
+"""
+Routine to Summarize a specific reddit post
+including its comments.
+"""
+async def redditSummary(url: str) -> str:
+
     # Authenticate
     reddit = getAPIref()
 
-    # Iterate through the top hot posts in this subredit
-    results=[]
-    subreddit = await reddit.subreddit(subreddit_topic, fetch=True)
-    async for submission in subreddit.hot(limit=num_posts):
-        print(f"Number of comments in {submission.url}: ",submission.num_comments)
-        result = ""
-        result = result + f"RefUrl: {submission.url}\n"
-        result = result + f"Title: {submission.title}\n"
-        result = result + f"Post: {submission.selftext}\n"
-        comments = await submission.comments()
-        await comments.replace_more(limit=None)
-        all_comments = comments.list()
-        result = result + "Comments: "
-        for comment in all_comments:
-            result = result + f"{comment.body}\n"
-        
-        #print(result)
+    start_time = time.time()
+    # Iterate through the comments
+    submission = await reddit.submission(url=url)
+    print(f"Number of comments in {url}: ",submission.num_comments)
+    result = ""
+    comments = await submission.comments()
+    await comments.replace_more(limit=None)
+    all_comments = comments.list()
+    for comment in all_comments:
+        result = result + f"{comment.body}\n"
 
-        # Summarize the Redit Post and add it to the results.
-        pre_prompt = f"""
-        Your task is to generate a short summary of this reddit {subreddit_topic} subreddit \ 
-        post id {submission.id}. 
-        """
-        prompt_template = pre_prompt + """
-        delimited by triple \
-        backticks by including the subreddit, the main topic or question, points or answers given, \
-        and list any urls given under a distinct reference section one URL per line. \
-        Take extra care to not repeat yourself. In particular only list a given URL once. \
-        Output the summary in a JSON object with a key id for the post id, key subreddit for the given subreddit, a key topic \
-        for the main topic which holds a string, \
-        a key points for main points or answers given in the comments which is an array of strings and a key for the references \
-        which is an arrary of strings.
-        Post: ```{text}```
-        """
-        
-        # Define LLM chain
-        llm = ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo-16k")
+    comment_time = time.time()        
 
-        # Define a Map Reduce Chain
-        map_reduce_chain = load_summarize_chain(llm, chain_type="map_reduce")
+    # Summarize the Redit Post.
+    pre_prompt = f"""
+    Your task is to generate a summary of this reddit post: {submission.selftext} with topic: {submission.title}. 
+    and the comments delimited by the triple backticks.\ 
+    """
+    prompt_template = pre_prompt + """
+    Structure the summary should be in markdown with the following sections: \
+    * Topic: <list the topic> \
+    ** Subreddit: <list the subreddit> \
+    ** Post: <list the post> \
+    ** Comment Summary: <list the major topics and posts in the comments> \
+    ** References: <list any urls provided in the post or comments one per line> \
+    ```{text}``` Summary:
+    """
 
-        # Set the summary prompt
-        map_reduce_chain.combine_document_chain.llm_chain.prompt.template = prompt_template
-        
-        # Split text to assure it fits in the context window
-        text_splitter = RecursiveCharacterTextSplitter.from_tiktoken_encoder(chunk_size=1000, chunk_overlap=0)
-        texts = text_splitter.split_text(result)
-  
-        # Create multiple documents
-        docs = [Document(page_content=t) for t in texts]
+    # Define LLM chain
+    llm = ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo-16k")
 
-        # Generate the summary and append it to the results
-        summary_of_post = map_reduce_chain.run(docs)
-        results.append(summary_of_post)
-        
-        print(summary_of_post)
+    # Define a Map Reduce Chain
+    map_reduce_chain = load_summarize_chain(llm, chain_type="map_reduce")
 
-    return results
+    # Set the summary prompt
+    map_reduce_chain.combine_document_chain.llm_chain.prompt.template = prompt_template
+    
+    # Split text to assure it fits in the context window
+    text_splitter = RecursiveCharacterTextSplitter.from_tiktoken_encoder(chunk_size=1000, chunk_overlap=0)
+    texts = text_splitter.split_text(result)
+
+    # Create multiple documents
+    docs = [Document(page_content=t) for t in texts]
+
+    # Generate the summary and append it to the results
+    summary_of_post = map_reduce_chain.run(docs)
+    
+    summary_time = time.time()
+
+
+    elapsed_time = comment_time - start_time  # Calculate the elapsed time
+    print(f"Comment time: {elapsed_time}:4.2f seconds")
+    elapsed_time = summary_time - comment_time  # Calculate the elapsed time
+    print(f"LLM Summarization time: {elapsed_time}:4.2f seconds")
+
+    return summary_of_post

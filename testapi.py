@@ -15,24 +15,6 @@ subreddits = ["datascience",
 "visualization",
 "applyingtocollege"]
 
-def get_the_hot_reddits(reddit, numposts=2):
-
-    url = "http://0.0.0.0:10000/reddit"
-    payload = {
-            "subreddit": f"{reddit}",
-            "numposts": numposts
-        }
-    headers = {
-        'Content-Type': 'application/json',
-        'accept': 'application/json',
-        'access_token': "I Paint The Town Red!"
-        }
-
-    res = requests.post(url, json=payload, headers=headers).json()
-    return res
-
-#f = open("reddits_summary.txt", "a")
-
 
 def getRedditCategory(reddit, numposts):
     url = "http://0.0.0.0:10000/reddit/category"
@@ -45,19 +27,53 @@ def getRedditCategory(reddit, numposts):
         'accept': 'application/json',
         'access_token': "I Paint The Town Red!"
         }
-
     res = requests.post(url, json=payload, headers=headers).json()
-    return res    
+    return res  
 
+def getRedditSummary(url_to_summarize):
+    url = "http://0.0.0.0:10000/reddit/summary"
+    payload = {
+            "url": f"{url_to_summarize}",
+        }
+    headers = {
+        'Content-Type': 'application/json',
+        'accept': 'application/json',
+        'access_token': "I Paint The Town Red!"
+        }
+    res = requests.post(url, json=payload, headers=headers).json()
+    return res  
+ 
+def getResearch(query):
+    url = "http://0.0.0.0:10000/research"
+    payload = {
+            "query": f"{query}",
+        }
+    headers = {
+        'Content-Type': 'application/json',
+        'accept': 'application/json',
+        'access_token': "I Paint The Town Red!"
+        }
+    res = requests.post(url, json=payload, headers=headers).json()
+    return res  
 
-for r in subreddits:
-    res = getRedditCategory(r,10)
-    print(r,"\n",res)
-    """
-    f.write(r+"\n")
-    for i in res:
-        output = json.dumps(json.loads(i), indent=2)
-        print(output,"\n")
-        f.write(output+"\n")
-    """
-#f.close()
+f = open("reddits_summary.txt", "w")
+
+tmp = getResearch("Why did things escalate in Israel recently?")
+print("RESEARCH:\n",tmp)
+f.write("RESEARCH:\n")
+f.write(tmp)
+f.write("\n\n")
+
+tmp = getRedditCategory("datasets",10)
+print("HOT/TOP Reddit Posts:\n",tmp)
+f.write("HOT/TOP Reddit Posts:\n")
+f.write( json.dumps(tmp))
+f.write("\n\n")
+
+tmp = getRedditSummary("https://www.reddit.com/r/datasets/comments/173rxw1/are_there_any_cool_geology_datasets/")
+print("Reddit Summary:\n",tmp)
+f.write("Reddit Summary:\n")
+f.write(tmp)
+f.write("\n\n")
+
+f.close()
