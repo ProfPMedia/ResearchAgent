@@ -21,7 +21,7 @@ class RedditObj(BaseModel):
 
 # Pydantic model for the subreddit summary
 class RedditSummaryObj(BaseModel):
-    url: str
+    subredditId: str
 
 @app.post("/research")
 async def researchAgent(query: Query, api_key: APIKey = Depends(auth.get_api_key)):
@@ -42,10 +42,10 @@ async def redditCategoryAgent(reddit_obj: RedditObj, api_key: APIKey = Depends(a
 
 @app.post("/reddit/summary")
 async def redditCategoryAgent(reddit_obj: RedditSummaryObj, api_key: APIKey = Depends(auth.get_api_key)):
-    url = reddit_obj.url
-    print("Summarizing: ",url)
+    id = reddit_obj.subredditId
+    print("Summarizing: ",id)
     # Summarize the content
-    summary = await reddit.redditSummary(url)
+    summary = await reddit.redditSummary(id)
     return summary
 
 

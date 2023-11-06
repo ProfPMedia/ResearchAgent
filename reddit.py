@@ -57,15 +57,15 @@ async def getRedditPosts(subreddit_topic: str, num_posts: int = NUM_POSTS) -> li
 Routine to Summarize a specific reddit post
 including its comments.
 """
-async def redditSummary(url: str) -> str:
+async def redditSummary(id: str) -> str:
 
     # Authenticate
     reddit = getAPIref()
 
     start_time = time.time()
     # Iterate through the comments
-    submission = await reddit.submission(url=url)
-    print(f"Number of comments in {url}: ",submission.num_comments)
+    submission = await reddit.submission(id)
+    print(f"Number of comments in {id}: ",submission.num_comments)
     result = ""
     comments = await submission.comments()
     await comments.replace_more(limit=None)
